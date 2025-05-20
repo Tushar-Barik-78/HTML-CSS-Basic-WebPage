@@ -1,0 +1,228 @@
+
+
+/* Base rule */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    scroll-behavior: smooth;
+    /* scroll-snap-type:y, proximity; */
+}
+
+a,
+p,
+li,label {
+    font-family: "Urbanist", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--para-color);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* theme */
+
+:root {
+    --main-color: #0062ff;
+    --supporting-color: #ebf3fe;
+    --font-color: #424242;
+    --bg-color: #f7fcff;
+    --footer-bg--color: #000a19;
+    --white-color: #fff;
+    --hero-heading-color: #003b99;
+    --heading-color: #000a19;
+    --para-color: #504e4d;
+    --btn-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+}
+
+
+
+
+
+.container {
+    max-width: 132rem;
+    margin: 0 auto;
+    padding: 9.6rem 2.4rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-two--cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.btn{
+    background-color: var(--hero-heading-color);
+    padding: 10px 20px;
+    color: whitesmoke;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--font-color);
+    }
+}
+
+
+.section-navbar,.section-blogs {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    
+}
+
+
+.section-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 2.4rem;
+}
+
+.section-navbar .navbar ul {
+    display: flex;
+    gap: 6.4rem;
+    text-transform: capitalize;
+    font-size: 24px;
+
+     & li a {
+        color: var(--heading-color);
+        display: inline-block;
+        position: relative;
+        font-weight: 500;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.3rem;
+            width: 0%;
+            border-bottom: 0.2rem solid var(--main-color);
+            transition: all 0.3s linear;
+
+        }
+    } 
+
+    & li a:hover::before {
+        width: 100%;
+    }
+}
+
+
+/*!   Hero section   */
+
+main {
+
+    position: relative;
+    background-image: linear-gradient(to top right,
+            #3d86fa,
+            #4484fb,
+            #679eff,
+            #b3d2ff,
+            #ebf3fe);
+}
+
+.section-hero .grid {
+    justify-items: center ;
+    align-items: center;
+    gap: 6.4rem;
+
+    & .hero-subheading {
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        font-size: 1.7rem;
+        word-spacing: 0.2rem;
+        color: var(--btn-hover-bg-color);
+        font-weight: 700;
+    }
+
+    & .hero-heading {
+        font-size: 5.8rem;
+        line-height: 1.3;
+        font-family: "Jost";
+        color: var(--hero-heading-color);
+        font-weight: 900;
+
+    }
+
+    & .hero-para {
+        color: var(--white-color);
+        margin: 2rem 0 4.2rem 0;
+        /* line-height: 1.2; */
+    }
+}
+
+
+.hero-image {
+
+    display: grid;
+    justify-items: center ;
+    border-radius: 20px;
+    img{
+        width: 100%;
+        /* height: auto; */
+        transform: scaleX(-1);
+    }
+    
+}
+
+
+.section-extra h1{
+    color: #32cd32;
+    font-size: 42px;
+    transition: all 1s linear;
+    &:hover{
+        color: blue;
+    }
+}
+
+
+.section-contact{
+    height: 500px;
+    display: flex;
+    background-color: rgb(19, 19, 39);
+    & .inner{
+        border-radius: 20px ;
+        background-color: #fff;
+        padding: 40px;
+        margin: 0px 40px;
+        translate:  0 -150px;
+        border: #161616 2px solid;
+        font-size: 18px;
+        input,textarea,select{
+            font-size: 18px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        & .button{
+            padding: 10px 20px;
+            
+            border-radius: 20px;
+            translate: 230px;
+            margin-top: 30px;
+        }
+    }
+
+}
